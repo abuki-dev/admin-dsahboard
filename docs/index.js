@@ -57,7 +57,7 @@ function updateLivePreview() {
   const previewDesc = previewCard.querySelector(".preview-desc");
 
   if (previewTitle) previewTitle.textContent = title.value || "Product Name";
-  if (previewPrice) previewPrice.textContent = `$${price.value || "0.00"}`;
+  if (previewPrice) previewPrice.textContent = `${price.value || "0.00"}`;
   if (previewDesc)
     previewDesc.textContent = description.value || "Product description...";
 
@@ -153,26 +153,32 @@ function renderProducts() {
   products.forEach((product) => {
     const card = document.createElement("div");
     card.className =
-      "glass-panel rounded-[2rem] overflow-hidden group hover:border-indigo-500/50 transition-all duration-500";
+      "glass-panel rounded-3xl overflow-hidden group hover:border-indigo-400/60 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 transform hover:-translate-y-2";
     card.innerHTML = `
-      <div class="relative h-48 overflow-hidden">
-        <img src="${product.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-        <div class="absolute bottom-3 left-4">
-          <span class="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-white/20">
-            $${product.price}
-          </span>
+      <div class="relative h-56 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+        <img src="${product.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+        <div class="absolute top-4 right-4">
+          <div class="bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+            <span class="text-emerald-400 text-sm font-black tracking-wider">$${product.price}</span>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <h3 class="text-xl font-black text-white mb-1 drop-shadow-lg truncate">${product.name}</h3>
+          <div class="flex items-center gap-2">
+            <div class="h-1 w-12 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-full"></div>
+            <span class="text-xs text-slate-300 font-semibold">Premium Asset</span>
+          </div>
         </div>
       </div>
-      <div class="p-6">
-        <h3 class="text-lg font-bold text-white mb-2 truncate">${product.name}</h3>
-        <p class="text-slate-400 text-xs line-clamp-2 mb-6">${product.desc}</p>
+      <div class="p-6 bg-gradient-to-b from-slate-900/50 to-slate-900/80">
+        <p class="text-slate-300 text-sm leading-relaxed mb-6 line-clamp-2 min-h-[2.5rem]">${product.desc}</p>
         <div class="flex gap-3">
-          <button onclick="editProduct(${product.id})" class="flex-1 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-xs font-semibold text-white transition-all">
-            <i class="fas fa-edit mr-1"></i> Edit
+          <button onclick="editProduct(${product.id})" class="flex-1 py-3 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 hover:from-indigo-600 hover:to-purple-600 border border-indigo-500/30 hover:border-indigo-400 rounded-xl text-sm font-bold text-indigo-200 hover:text-white transition-all duration-300 shadow-lg hover:shadow-indigo-500/50">
+            <i class="fas fa-pen-to-square mr-2"></i>Edit
           </button>
-          <button onclick="deleteProduct(${product.id})" class="px-4 py-2 bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white rounded-xl text-xs font-semibold transition-all">
-            <i class="fas fa-trash"></i>
+          <button onclick="deleteProduct(${product.id})" class="px-5 py-3 bg-gradient-to-r from-red-600/20 to-rose-600/20 hover:from-red-600 hover:to-rose-600 border border-red-500/30 hover:border-red-400 text-red-400 hover:text-white rounded-xl text-sm font-bold transition-all duration-300 shadow-lg hover:shadow-red-500/50">
+            <i class="fas fa-trash-can"></i>
           </button>
         </div>
       </div>
@@ -312,26 +318,32 @@ function filterProducts() {
   filtered.forEach((product) => {
     const card = document.createElement("div");
     card.className =
-      "glass-panel rounded-[2rem] overflow-hidden group hover:border-indigo-500/50 transition-all duration-500";
+      "glass-panel rounded-3xl overflow-hidden group hover:border-indigo-400/60 hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-500 transform hover:-translate-y-2";
     card.innerHTML = `
-      <div class="relative h-48 overflow-hidden">
-        <img src="${product.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
-        <div class="absolute bottom-3 left-4">
-          <span class="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-white/20">
-            $${product.price}
-          </span>
+      <div class="relative h-56 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+        <img src="${product.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+        <div class="absolute top-4 right-4">
+          <div class="bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+            <span class="text-emerald-400 text-sm font-black tracking-wider">$${product.price}</span>
+          </div>
+        </div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <h3 class="text-xl font-black text-white mb-1 drop-shadow-lg truncate">${product.name}</h3>
+          <div class="flex items-center gap-2">
+            <div class="h-1 w-12 bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-full"></div>
+            <span class="text-xs text-slate-300 font-semibold">Premium Asset</span>
+          </div>
         </div>
       </div>
-      <div class="p-6">
-        <h3 class="text-lg font-bold text-white mb-2 truncate">${product.name}</h3>
-        <p class="text-slate-400 text-xs line-clamp-2 mb-6">${product.desc}</p>
+      <div class="p-6 bg-gradient-to-b from-slate-900/50 to-slate-900/80">
+        <p class="text-slate-300 text-sm leading-relaxed mb-6 line-clamp-2 min-h-[2.5rem]">${product.desc}</p>
         <div class="flex gap-3">
-          <button onclick="editProduct(${product.id})" class="flex-1 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-xs font-semibold text-white transition-all">
-            <i class="fas fa-edit mr-1"></i> Edit
+          <button onclick="editProduct(${product.id})" class="flex-1 py-3 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 hover:from-indigo-600 hover:to-purple-600 border border-indigo-500/30 hover:border-indigo-400 rounded-xl text-sm font-bold text-indigo-200 hover:text-white transition-all duration-300 shadow-lg hover:shadow-indigo-500/50">
+            <i class="fas fa-pen-to-square mr-2"></i>Edit
           </button>
-          <button onclick="deleteProduct(${product.id})" class="px-4 py-2 bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white rounded-xl text-xs font-semibold transition-all">
-            <i class="fas fa-trash"></i>
+          <button onclick="deleteProduct(${product.id})" class="px-5 py-3 bg-gradient-to-r from-red-600/20 to-rose-600/20 hover:from-red-600 hover:to-rose-600 border border-red-500/30 hover:border-red-400 text-red-400 hover:text-white rounded-xl text-sm font-bold transition-all duration-300 shadow-lg hover:shadow-red-500/50">
+            <i class="fas fa-trash-can"></i>
           </button>
         </div>
       </div>
