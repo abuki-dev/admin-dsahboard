@@ -3,239 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Admin - Product Architect</title>
-    <link rel="icon" type="image/png" href="assets/dashboard.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nexus — Sign In</title>
+    <link rel="icon" type="image/png" href="./assets/dashboard.png" />
+    <link rel="stylesheet" href="./src/output.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap");
-
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
-        color: #e2e8f0;
-      }
-
-      /* Glassmorphism Effect */
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      /* Input Styling */
-      input,
-      textarea {
-        background: rgba(255, 255, 255, 0.05) !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        color: white !important;
-      }
-
-      input:focus,
-      textarea:focus {
-        border-color: #6366f1 !important;
-        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2) !important;
-        outline: none !important;
-      }
-
-      /* Custom File Input Utility */
-      .file-input-wrapper input[type="file"] {
-        position: absolute;
-        left: -9999px;
-      }
-
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #475569;
-        border-radius: 10px;
-      }
-    </style>
   </head>
-  <body class="min-h-screen py-10 px-4 custom-scrollbar">
-    <div class="max-w-7xl mx-auto">
-      <header
-        class="glass-panel rounded-[2rem] p-8 mb-10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6"
-      >
-        <div class="flex items-center space-x-6">
-          <div
-            class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-fuchsia-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/20"
-          >
-            <i class="fas fa-terminal text-white text-2xl"></i>
-          </div>
-          <div>
-            <h1 class="text-4xl font-extrabold text-white tracking-tight">
-              Admin <span class="text-indigo-400">Dashboard</span>
-            </h1>
-            <p class="text-slate-400 font-medium">
-              Configure and deploy new inventory assets
-            </p>
-          </div>
-        </div>
-        <a
-          href="#container"
-          class="group px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-2xl border border-white/10 transition-all flex items-center space-x-3"
-        >
-          <i
-            class="fas fa-cubes text-indigo-400 group-hover:rotate-12 transition-transform"
-          ></i>
-          <span>Database View</span>
-        </a>
-      </header>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <div
-          class="lg:col-span-7 glass-panel rounded-[2.5rem] p-10 shadow-inner"
-        >
-          <div class="mb-10">
-            <h2
-              class="text-2xl font-bold text-white flex items-center space-x-3"
+  <body class="login-page custom-scrollbar" id="login-form">
+    <!-- Background orbs -->
+    <div class="login-orb login-orb--1"></div>
+    <div class="login-orb login-orb--2"></div>
+    <div class="login-orb login-orb--3"></div>
+
+    <div class="login-wrap">
+      <!-- Left panel – branding -->
+      <div class="login-brand">
+        <div class="login-brand-inner">
+          <div class="login-logo">
+            <div class="login-logo-icon"><i class="fas fa-bolt"></i></div>
+            <span class="login-logo-text"
+              >Nexus<span class="login-logo-accent">Store</span></span
             >
-              <span class="w-2 h-8 bg-indigo-500 rounded-full"></span>
-              <span>Primary Configuration</span>
-            </h2>
           </div>
 
-          <form id="itemForm" class="space-y-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div class="space-y-3">
-                <label
-                  for="name"
-                  class="text-sm font-semibold text-slate-300 flex items-center gap-2"
-                >
-                  <i class="fas fa-fingerprint text-indigo-400"></i> Asset Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  required
-                  placeholder="Masterpiece Pro..."
-                  class="w-full px-5 py-4 rounded-2xl transition-all"
-                />
-              </div>
+          <h1 class="login-brand-title">
+            Your gateway to<br />
+            <span class="login-brand-accent">premium assets</span>
+          </h1>
+          <p class="login-brand-sub">
+            Thousands of high-quality digital assets crafted for creators,
+            designers, and developers.
+          </p>
 
-              <div class="space-y-3">
-                <label
-                  for="price"
-                  class="text-sm font-semibold text-slate-300 flex items-center gap-2"
-                >
-                  <i class="fas fa-coins text-yellow-500"></i> Credits (USD)
-                </label>
-                <input
-                  required
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  id="price"
-                  placeholder="0.00"
-                  class="w-full px-5 py-4 rounded-2xl transition-all"
-                />
-              </div>
-            </div>
-
-            <div class="space-y-3">
-              <label
-                class="text-sm font-semibold text-slate-300 flex items-center gap-2"
-              >
-                <i class="fas fa-camera-retro text-fuchsia-400"></i> Asset Image
-              </label>
-              <div class="file-input-wrapper group">
-                <input type="file" id="image" accept="image/*" required />
-                <button
-                  type="button"
-                  id="fileBtn"
-                  class="w-full py-4 bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/30 text-indigo-200 font-bold rounded-2xl transition-all flex items-center justify-center space-x-3"
-                >
-                  <i class="fas fa-upload animate-bounce"></i>
-                  <span>Select Image Asset</span>
-                </button>
-              </div>
-
-              <div
-                id="imagePreview"
-                class="mt-6 p-2 glass-panel rounded-3xl border-2 border-dashed border-white/10 min-h-[180px] flex items-center justify-center overflow-hidden"
-              >
-                <div class="text-center text-slate-500">
-                  <i class="fas fa-photo-film text-4xl mb-3 opacity-20"></i>
-                  <p class="text-sm">VGA Signal Missing: Upload Image</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="space-y-3">
-              <label
-                for="description"
-                class="text-sm font-semibold text-slate-300 flex items-center gap-2"
-              >
-                <i class="fas fa-pen-nib text-emerald-400"></i> Technical specs
-                / Description
-              </label>
-              <textarea
-                id="description"
-                rows="4"
-                placeholder="Detail the unique features of this asset..."
-                class="w-full px-5 py-4 rounded-2xl transition-all resize-none"
-              ></textarea>
-            </div>
-
-            <button
-              id="create"
-              type="submit"
-              class="w-full bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 text-white font-black py-5 rounded-2xl text-xl shadow-xl shadow-indigo-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center space-x-4"
-            >
-              <i class="fas fa-bolt"></i>
-              <span>Create Product</span>
-            </button>
-          </form>
-        </div>
-
-        <div class="lg:col-span-5">
-          <div
-            class="sticky top-10 glass-panel rounded-[2.5rem] p-8 border-indigo-500/20"
-          >
-            <h3
-              class="text-xl font-bold text-white mb-8 flex items-center justify-between"
-            >
-              <span>Live Monitor</span>
-              <span
-                class="flex h-3 w-3 rounded-full bg-emerald-500 animate-pulse"
+          <ul class="login-features">
+            <li class="login-feature">
+              <span class="login-feature-icon"
+                ><i class="fas fa-bolt"></i
               ></span>
-            </h3>
-
-            <div
-              id="previewCard"
-              class="relative group bg-slate-900/50 border border-white/10 rounded-3xl p-6 min-h-[450px] flex flex-col items-center justify-center transition-all duration-500"
-            >
-              <div class="text-center space-y-4">
-                <div
-                  class="w-20 h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10"
-                >
-                  <i class="fas fa-cube text-4xl text-slate-700"></i>
-                </div>
-                <h4
-                  class="text-2xl font-bold text-slate-600 italic uppercase tracking-widest"
-                >
-                  Product Name
-                </h4>
-                <p class="text-slate-500 max-w-[200px]">
-                  Data stream pending. Complete configuration to see visual.
-                </p>
-              </div>
-            </div>
-          </div>
+              Instant delivery on every purchase
+            </li>
+            <li class="login-feature">
+              <span class="login-feature-icon"
+                ><i class="fas fa-shield-halved"></i
+              ></span>
+              Secure, encrypted transactions
+            </li>
+            <li class="login-feature">
+              <span class="login-feature-icon"
+                ><i class="fas fa-infinity"></i
+              ></span>
+              Lifetime access to your assets
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div
-        id="container"
-        class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-      ></div>
+      <!-- Right panel – form -->
+      <div class="login-card-wrap">
+        <div class="login-card glass-panel">
+          <!-- Header -->
+          <div class="login-card-header">
+            <div class="login-card-icon">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h2 class="login-card-title">Welcome back</h2>
+            <p class="login-card-sub">Sign in to your Nexus account</p>
+          </div>
+
+          <!-- Form -->
+          <form id="form" class="login-form" novalidate>
+            <!-- Full name -->
+            <div class="lf-field">
+              <label class="lf-label" for="name">
+                <i class="fas fa-user"></i> Full Name
+              </label>
+              <div class="lf-input-wrap">
+                <input
+                  type="text"
+                  id="name"
+                  class="lf-input"
+                  placeholder="Alex Johnson"
+                  oninput="this.value = this.value.replace(/[0-9]/g, '')"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="lf-field">
+              <label class="lf-label" for="email">
+                <i class="fas fa-envelope"></i> Email Address
+              </label>
+              <div class="lf-input-wrap">
+                <input
+                  type="email"
+                  id="email"
+                  class="lf-input"
+                  placeholder="alex@nexus.io"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="lf-field">
+              <div class="lf-label-row">
+                <label class="lf-label" for="password">
+                  <i class="fas fa-lock"></i> Password
+                </label>
+                <a href="#" class="lf-forgot">Forgot password?</a>
+              </div>
+              <div class="lf-input-wrap lf-input-wrap--icon-right">
+                <input
+                  type="password"
+                  id="password"
+                  class="lf-input"
+                  placeholder="••••••••"
+                  required
+                  autocomplete="current-password"
+                />
+                <button
+                  type="button"
+                  class="lf-eye-btn"
+                  id="togglePassword"
+                  aria-label="Toggle password visibility"
+                >
+                  <i class="fas fa-eye" id="eyeIcon"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Account type -->
+            <div class="lf-field">
+              <label class="lf-label" for="account-type">
+                <i class="fas fa-id-badge"></i> Account Type
+              </label>
+              <div class="lf-select-wrap">
+                <i class="fas fa-chevron-down lf-select-chevron"></i>
+                <select id="account-type" class="lf-select" required>
+                  <option value="" selected disabled>
+                    Select account type…
+                  </option>
+                  <option value="user">
+                    🛍️ &nbsp; User — Browse &amp; buy
+                  </option>
+                  <option value="admin">⚙️ &nbsp; Admin — Manage store</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="lf-submit" id="loginBtn">
+              <span id="loginBtnText"
+                ><i class="fas fa-arrow-right-to-bracket"></i> Sign In</span
+              >
+              <span id="loginBtnLoader" style="display: none">
+                <i class="fas fa-circle-notch fa-spin"></i> Signing in…
+              </span>
+            </button>
+          </form>
+
+          <!-- Footer note -->
+          <p class="login-card-footer">
+            Don't have an account?
+            <a href="#" class="login-card-footer-link">Create one free</a>
+          </p>
+        </div>
+      </div>
     </div>
 
-    <script src="index.js"></script>
+    <script src="./src/index.js"></script>
+    <script>
+      // Password toggle
+      document
+        .getElementById("togglePassword")
+        .addEventListener("click", function () {
+          const input = document.getElementById("password");
+          const icon = document.getElementById("eyeIcon");
+          const show = input.type === "password";
+          input.type = show ? "text" : "password";
+          icon.className = show ? "fas fa-eye-slash" : "fas fa-eye";
+        });
+
+      // Loading state on submit
+      document.getElementById("form").addEventListener("submit", function () {
+        document.getElementById("loginBtnText").style.display = "none";
+        document.getElementById("loginBtnLoader").style.display = "inline-flex";
+      });
+    </script>
   </body>
 </html>

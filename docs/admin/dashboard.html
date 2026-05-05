@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Admin — Dashboard</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-layout custom-scrollbar">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-logo">
+        <div class="admin-logo-icon"><i class="fas fa-terminal"></i></div>
+        <span class="admin-logo-text"
+          >Nexus<span class="admin-logo-accent">Admin</span></span
+        >
+      </div>
+
+      <nav class="admin-nav">
+        <p class="admin-nav-label">Main</p>
+        <a href="./dashboard.html" class="admin-nav-item active">
+          <i class="fas fa-gauge-high"></i><span>Dashboard</span>
+        </a>
+        <a href="./index.html" class="admin-nav-item">
+          <i class="fas fa-plus-circle"></i><span>Add Product</span>
+        </a>
+        <a href="./inventory.html" class="admin-nav-item">
+          <i class="fas fa-boxes-stacked"></i><span>Inventory</span>
+        </a>
+        <a href="./orders.html" class="admin-nav-item">
+          <i class="fas fa-receipt"></i><span>Orders</span>
+          <span class="admin-nav-badge">4</span>
+        </a>
+        <p class="admin-nav-label">Growth</p>
+        <a href="./marketting.html" class="admin-nav-item">
+          <i class="fas fa-bullhorn"></i><span>Marketing</span>
+        </a>
+        <p class="admin-nav-label">Account</p>
+        <a href="./profile.html" class="admin-nav-item">
+          <i class="fas fa-user-shield"></i><span>Profile</span>
+        </a>
+        <a href="../index.html" class="admin-nav-item admin-nav-item--danger">
+          <i class="fas fa-arrow-right-from-bracket"></i><span>Sign Out</span>
+        </a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-avatar"><i class="fas fa-user"></i></div>
+        <div class="admin-sidebar-user">
+          <p class="admin-sidebar-name">Admin User</p>
+          <p class="admin-sidebar-role">Super Admin</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="admin-main">
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="admin-menu-btn" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="admin-page-title">Dashboard</h1>
+            <p class="admin-page-sub">Welcome back — here's what's happening</p>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <button class="admin-topbar-btn">
+            <i class="fas fa-bell"></i><span class="admin-topbar-dot"></span>
+          </button>
+          <a href="./profile.html" class="admin-topbar-avatar"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <!-- Stat cards -->
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon indigo">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">$12,480</p>
+              <p class="admin-stat-label">Total Revenue</p>
+              <p class="admin-stat-trend up">
+                <i class="fas fa-arrow-trend-up"></i> +18% this month
+              </p>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon fuchsia">
+              <i class="fas fa-bag-shopping"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">348</p>
+              <p class="admin-stat-label">Total Orders</p>
+              <p class="admin-stat-trend up">
+                <i class="fas fa-arrow-trend-up"></i> +9% this month
+              </p>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon emerald">
+              <i class="fas fa-boxes-stacked"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">64</p>
+              <p class="admin-stat-label">Products Live</p>
+              <p class="admin-stat-trend up">
+                <i class="fas fa-arrow-trend-up"></i> +5 this week
+              </p>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon yellow">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">1,204</p>
+              <p class="admin-stat-label">Active Users</p>
+              <p class="admin-stat-trend down">
+                <i class="fas fa-arrow-trend-down"></i> −2% this week
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent orders + top products -->
+        <div class="admin-two-col">
+          <div class="glass-panel rounded-[2rem] p-6">
+            <div class="admin-section-header">
+              <h2 class="admin-section-title">Recent Orders</h2>
+              <a href="./orders.html" class="admin-section-link"
+                >View all <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Customer</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="admin-table-id">#NX-0041</td>
+                  <td>Alex Johnson</td>
+                  <td>$49.00</td>
+                  <td><span class="order-badge delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                  <td class="admin-table-id">#NX-0040</td>
+                  <td>Maria Garcia</td>
+                  <td>$29.00</td>
+                  <td><span class="order-badge pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="admin-table-id">#NX-0039</td>
+                  <td>James Lee</td>
+                  <td>$19.00</td>
+                  <td><span class="order-badge delivered">Delivered</span></td>
+                </tr>
+                <tr>
+                  <td class="admin-table-id">#NX-0038</td>
+                  <td>Sara Kim</td>
+                  <td>$99.00</td>
+                  <td>
+                    <span class="order-badge processing">Processing</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="glass-panel rounded-[2rem] p-6">
+            <div class="admin-section-header">
+              <h2 class="admin-section-title">Top Products</h2>
+              <a href="./inventory.html" class="admin-section-link"
+                >View all <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+            <div class="admin-top-products">
+              <div class="admin-top-product">
+                <div class="admin-top-product-icon">
+                  <i class="fas fa-cube"></i>
+                </div>
+                <div class="admin-top-product-info">
+                  <p class="admin-top-product-name">Masterpiece Pro Bundle</p>
+                  <div class="admin-top-product-bar-wrap">
+                    <div class="admin-top-product-bar" style="width: 82%"></div>
+                  </div>
+                </div>
+                <span class="admin-top-product-rev">$4,100</span>
+              </div>
+              <div class="admin-top-product">
+                <div class="admin-top-product-icon fuchsia">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <div class="admin-top-product-info">
+                  <p class="admin-top-product-name">UI Component Kit</p>
+                  <div class="admin-top-product-bar-wrap">
+                    <div
+                      class="admin-top-product-bar fuchsia"
+                      style="width: 61%"
+                    ></div>
+                  </div>
+                </div>
+                <span class="admin-top-product-rev">$2,900</span>
+              </div>
+              <div class="admin-top-product">
+                <div class="admin-top-product-icon emerald">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="admin-top-product-info">
+                  <p class="admin-top-product-name">Motion FX Pack</p>
+                  <div class="admin-top-product-bar-wrap">
+                    <div
+                      class="admin-top-product-bar emerald"
+                      style="width: 44%"
+                    ></div>
+                  </div>
+                </div>
+                <span class="admin-top-product-rev">$1,900</span>
+              </div>
+              <div class="admin-top-product">
+                <div class="admin-top-product-icon yellow">
+                  <i class="fas fa-icons"></i>
+                </div>
+                <div class="admin-top-product-info">
+                  <p class="admin-top-product-name">Icon Library Pro</p>
+                  <div class="admin-top-product-bar-wrap">
+                    <div
+                      class="admin-top-product-bar yellow"
+                      style="width: 30%"
+                    ></div>
+                  </div>
+                </div>
+                <span class="admin-top-product-rev">$1,200</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("sidebarToggle").addEventListener("click", () => {
+        document.getElementById("adminSidebar").classList.toggle("collapsed");
+      });
+    </script>
+  </body>
+</html>

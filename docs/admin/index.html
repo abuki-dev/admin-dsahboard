@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Admin - Product Architect</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-layout custom-scrollbar" id="admin-page">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-logo">
+        <div class="admin-logo-icon"><i class="fas fa-terminal"></i></div>
+        <span class="admin-logo-text"
+          >Nexus<span class="admin-logo-accent">Admin</span></span
+        >
+      </div>
+      <nav class="admin-nav">
+        <p class="admin-nav-label">Main</p>
+        <a href="./dashboard.html" class="admin-nav-item"
+          ><i class="fas fa-gauge-high"></i><span>Dashboard</span></a
+        >
+        <a href="./index.html" class="admin-nav-item active"
+          ><i class="fas fa-plus-circle"></i><span>Add Product</span></a
+        >
+        <a href="./inventory.html" class="admin-nav-item"
+          ><i class="fas fa-boxes-stacked"></i><span>Inventory</span></a
+        >
+        <a href="./orders.html" class="admin-nav-item"
+          ><i class="fas fa-receipt"></i><span>Orders</span
+          ><span class="admin-nav-badge">4</span></a
+        >
+        <p class="admin-nav-label">Growth</p>
+        <a href="./marketting.html" class="admin-nav-item"
+          ><i class="fas fa-bullhorn"></i><span>Marketing</span></a
+        >
+        <p class="admin-nav-label">Account</p>
+        <a href="./profile.html" class="admin-nav-item"
+          ><i class="fas fa-user-shield"></i><span>Profile</span></a
+        >
+        <a href="../index.html" class="admin-nav-item admin-nav-item--danger"
+          ><i class="fas fa-arrow-right-from-bracket"></i
+          ><span>Sign Out</span></a
+        >
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-avatar"><i class="fas fa-user"></i></div>
+        <div class="admin-sidebar-user">
+          <p class="admin-sidebar-name">Admin User</p>
+          <p class="admin-sidebar-role">Super Admin</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="admin-menu-btn" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="admin-page-title">Add Product</h1>
+            <p class="admin-page-sub">
+              Configure and deploy new inventory assets
+            </p>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <a href="#container" class="admin-add-btn"
+            ><i class="fas fa-cubes"></i> Database View</a
+          >
+          <button class="admin-topbar-btn">
+            <i class="fas fa-bell"></i><span class="admin-topbar-dot"></span>
+          </button>
+          <a href="./profile.html" class="admin-topbar-avatar"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <div
+              class="lg:col-span-7 glass-panel rounded-[2.5rem] p-10 shadow-inner"
+            >
+              <div class="mb-10">
+                <h2
+                  class="text-2xl font-bold text-white flex items-center space-x-3"
+                >
+                  <span class="w-2 h-8 bg-indigo-500 rounded-full"></span>
+                  <span>Primary Configuration</span>
+                </h2>
+              </div>
+
+              <form id="itemForm" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div class="space-y-3">
+                    <label
+                      for="name"
+                      class="text-sm font-semibold text-slate-300 flex items-center gap-2"
+                    >
+                      <i class="fas fa-fingerprint text-indigo-400"></i> Asset
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      placeholder="Masterpiece Pro..."
+                      class="w-full px-5 py-4 rounded-2xl transition-all"
+                    />
+                  </div>
+
+                  <div class="space-y-3">
+                    <label
+                      for="price"
+                      class="text-sm font-semibold text-slate-300 flex items-center gap-2"
+                    >
+                      <i class="fas fa-coins text-yellow-500"></i> Credits (USD)
+                    </label>
+                    <input
+                      required
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      id="price"
+                      placeholder="0.00"
+                      class="w-full px-5 py-4 rounded-2xl transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <label
+                    class="text-sm font-semibold text-slate-300 flex items-center gap-2"
+                  >
+                    <i class="fas fa-camera-retro text-fuchsia-400"></i> Asset
+                    Image
+                  </label>
+                  <div class="file-input-wrapper group">
+                    <input type="file" id="image" accept="image/*" required />
+                    <button
+                      type="button"
+                      id="fileBtn"
+                      class="w-full py-4 bg-indigo-600/20 hover:bg-indigo-600/40 border border-indigo-500/30 text-indigo-200 font-bold rounded-2xl transition-all flex items-center justify-center space-x-3"
+                    >
+                      <i class="fas fa-upload animate-bounce"></i>
+                      <span>Select Image Asset</span>
+                    </button>
+                  </div>
+
+                  <div
+                    id="imagePreview"
+                    class="mt-6 p-2 glass-panel rounded-3xl border-2 border-dashed border-white/10 min-h-[180px] flex items-center justify-center overflow-hidden"
+                  >
+                    <div class="text-center text-slate-500">
+                      <i class="fas fa-photo-film text-4xl mb-3 opacity-20"></i>
+                      <p class="text-sm">VGA Signal Missing: Upload Image</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="space-y-3">
+                  <label
+                    for="description"
+                    class="text-sm font-semibold text-slate-300 flex items-center gap-2"
+                  >
+                    <i class="fas fa-pen-nib text-emerald-400"></i> Technical
+                    specs / Description
+                  </label>
+                  <textarea
+                    id="description"
+                    rows="4"
+                    placeholder="Detail the unique features of this asset..."
+                    class="w-full px-5 py-4 rounded-2xl transition-all resize-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  id="create"
+                  type="submit"
+                  class="w-full bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 text-white font-black py-5 rounded-2xl text-xl shadow-xl shadow-indigo-500/20 transform hover:-translate-y-1 transition-all flex items-center justify-center space-x-4"
+                >
+                  <i class="fas fa-bolt"></i>
+                  <span>Create Product</span>
+                </button>
+              </form>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div
+                class="sticky top-10 glass-panel rounded-[2.5rem] p-8 border-indigo-500/20"
+              >
+                <h3
+                  class="text-xl font-bold text-white mb-8 flex items-center justify-between"
+                >
+                  <span>Live Monitor</span>
+                  <span
+                    class="flex h-3 w-3 rounded-full bg-emerald-500 animate-pulse"
+                  ></span>
+                </h3>
+
+                <div
+                  id="previewCard"
+                  class="relative group bg-slate-900/50 border border-white/10 rounded-3xl p-6 min-h-[450px] flex flex-col items-center justify-center transition-all duration-500"
+                >
+                  <div class="text-center space-y-4">
+                    <div
+                      class="w-20 h-20 mx-auto bg-white/5 rounded-full flex items-center justify-center border border-white/10"
+                    >
+                      <i class="fas fa-cube text-4xl text-slate-700"></i>
+                    </div>
+                    <h4
+                      class="text-2xl font-bold text-slate-600 italic uppercase tracking-widest"
+                    >
+                      Product Name
+                    </h4>
+                    <p class="text-slate-500 max-w-[200px]">
+                      Data stream pending. Complete configuration to see visual.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="container"
+            class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          ></div>
+        </div>
+        <!-- /max-w -->
+      </div>
+      <!-- /admin-content -->
+    </div>
+    <!-- /admin-main -->
+
+    <script src="../src/index.js"></script>
+    <script>
+      document.getElementById("sidebarToggle").addEventListener("click", () => {
+        document.getElementById("adminSidebar").classList.toggle("collapsed");
+      });
+    </script>
+  </body>
+</html>

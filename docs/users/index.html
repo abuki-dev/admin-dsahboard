@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus — Store</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="min-h-screen custom-scrollbar"
+    onload="updatepage()"
+    id="usesrs-page"
+  >
+    <!-- NAVBAR -->
+    <nav class="nav-bar">
+      <div class="nav-inner">
+        <a href="./index.html" class="nav-logo">
+          <div class="nav-logo-icon"><i class="fas fa-bolt"></i></div>
+          <span class="nav-logo-text"
+            >Nexus<span class="nav-logo-accent">Store</span></span
+          >
+        </a>
+
+        <!-- Search bar -->
+        <div class="nav-search-wrap">
+          <i class="fas fa-search nav-search-icon"></i>
+          <input
+            type="text"
+            id="navSearch"
+            class="nav-search-input"
+            placeholder="Search products…"
+            autocomplete="off"
+          />
+          <kbd class="nav-search-kbd">⌘K</kbd>
+        </div>
+
+        <div class="nav-actions">
+          <a href="./cart.html" class="nav-icon-btn" aria-label="Cart">
+            <i class="fas fa-bag-shopping"></i>
+            <span class="nav-badge">3</span>
+          </a>
+
+          <div class="nav-dropdown-wrap" id="profileDropdownWrap">
+            <button
+              class="nav-avatar-btn"
+              id="profileBtn"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <div class="nav-avatar"><i class="fas fa-user"></i></div>
+              <span class="nav-avatar-name">Alex</span>
+              <i
+                class="fas fa-chevron-down nav-chevron"
+                id="profileChevron"
+              ></i>
+            </button>
+
+            <div class="nav-dropdown" id="profileDropdown" role="menu">
+              <div class="dropdown-header">
+                <div class="dropdown-avatar-lg">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <p class="dropdown-name">Alex Johnson</p>
+                  <p class="dropdown-email">alex@nexus.io</p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <ul class="dropdown-menu" role="none">
+                <li>
+                  <a
+                    href="./dasboard.html"
+                    class="dropdown-item"
+                    role="menuitem"
+                  >
+                    <span class="dropdown-item-icon indigo"
+                      ><i class="fas fa-gauge-high"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Dashboard</span>
+                      <span class="dropdown-item-sub">Your overview</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="./cart.html" class="dropdown-item" role="menuitem">
+                    <span class="dropdown-item-icon fuchsia"
+                      ><i class="fas fa-bag-shopping"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Cart</span>
+                      <span class="dropdown-item-sub">3 items waiting</span>
+                    </div>
+                    <span class="dropdown-item-badge">3</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./profile.html"
+                    class="dropdown-item"
+                    role="menuitem"
+                  >
+                    <span class="dropdown-item-icon emerald"
+                      ><i class="fas fa-user-pen"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Profile</span>
+                      <span class="dropdown-item-sub"
+                        >Settings &amp; account</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./dasboard.html#orders"
+                    class="dropdown-item"
+                    role="menuitem"
+                  >
+                    <span class="dropdown-item-icon slate"
+                      ><i class="fas fa-clock-rotate-left"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Order History</span>
+                      <span class="dropdown-item-sub">Past purchases</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <div class="dropdown-divider"></div>
+              <a href="../index.html" class="dropdown-signout" role="menuitem">
+                <i class="fas fa-arrow-right-from-bracket"></i>
+                <span>Sign out</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <main class="page-content">
+      <div class="hero-banner">
+        <div class="hero-glow"></div>
+        <div class="hero-text">
+          <p class="hero-eyebrow">
+            <i class="fas fa-bolt"></i> New arrivals just dropped
+          </p>
+          <h1 class="hero-title">
+            Discover Premium<br /><span class="hero-title-accent"
+              >Digital Assets</span
+            >
+          </h1>
+          <p class="hero-sub">
+            Browse thousands of high-quality assets crafted for creators.
+          </p>
+          <div class="hero-actions">
+            <a href="#catalogue" class="btn-primary"
+              ><i class="fas fa-compass"></i> Browse Catalogue</a
+            >
+            <a href="./dasboard.html" class="btn-ghost"
+              ><i class="fas fa-gauge-high"></i> My Dashboard</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Product grid placeholder -->
+      <section id="catalogue" class="section-wrap">
+        <div class="section-header">
+          <h2 class="section-title">Featured Assets</h2>
+          <a href="#" class="section-link"
+            >View all <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="product-grid" id="userProductGrid">
+        </div>
+      </section>
+    </main>
+    <script src="../src/index.js"></script>
+  </body>
+</html>

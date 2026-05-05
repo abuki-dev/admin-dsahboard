@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus — Dashboard</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen custom-scrollbar">
+    <!-- NAVBAR -->
+    <nav class="nav-bar">
+      <div class="nav-inner">
+        <a href="./index.html" class="nav-logo">
+          <div class="nav-logo-icon"><i class="fas fa-bolt"></i></div>
+          <span class="nav-logo-text"
+            >Nexus<span class="nav-logo-accent">Store</span></span
+          >
+        </a>
+        <div class="nav-search-wrap">
+          <i class="fas fa-search nav-search-icon"></i>
+          <input
+            type="text"
+            class="nav-search-input"
+            placeholder="Search products…"
+            autocomplete="off"
+          />
+          <kbd class="nav-search-kbd">⌘K</kbd>
+        </div>
+        <div class="nav-actions">
+          <a href="./cart.html" class="nav-icon-btn" aria-label="Cart">
+            <i class="fas fa-bag-shopping"></i>
+            <span class="nav-badge">3</span>
+          </a>
+          <div class="nav-dropdown-wrap" id="profileDropdownWrap">
+            <button
+              class="nav-avatar-btn"
+              id="profileBtn"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <div class="nav-avatar"><i class="fas fa-user"></i></div>
+              <span class="nav-avatar-name">Alex</span>
+              <i
+                class="fas fa-chevron-down nav-chevron"
+                id="profileChevron"
+              ></i>
+            </button>
+            <div class="nav-dropdown" id="profileDropdown" role="menu">
+              <div class="dropdown-header">
+                <div class="dropdown-avatar-lg">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <p class="dropdown-name">Alex Johnson</p>
+                  <p class="dropdown-email">alex@nexus.io</p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <ul class="dropdown-menu" role="none">
+                <li>
+                  <a
+                    href="./dasboard.html"
+                    class="dropdown-item dropdown-item--active"
+                    ><span class="dropdown-item-icon indigo"
+                      ><i class="fas fa-gauge-high"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Dashboard</span
+                      ><span class="dropdown-item-sub">Your overview</span>
+                    </div></a
+                  >
+                </li>
+                <li>
+                  <a href="./cart.html" class="dropdown-item"
+                    ><span class="dropdown-item-icon fuchsia"
+                      ><i class="fas fa-bag-shopping"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Cart</span
+                      ><span class="dropdown-item-sub">3 items waiting</span>
+                    </div>
+                    <span class="dropdown-item-badge">3</span></a
+                  >
+                </li>
+                <li>
+                  <a href="./profile.html" class="dropdown-item"
+                    ><span class="dropdown-item-icon emerald"
+                      ><i class="fas fa-user-pen"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Profile</span
+                      ><span class="dropdown-item-sub"
+                        >Settings &amp; account</span
+                      >
+                    </div></a
+                  >
+                </li>
+                <li>
+                  <a href="#orders" class="dropdown-item"
+                    ><span class="dropdown-item-icon slate"
+                      ><i class="fas fa-clock-rotate-left"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Order History</span
+                      ><span class="dropdown-item-sub">Past purchases</span>
+                    </div></a
+                  >
+                </li>
+              </ul>
+              <div class="dropdown-divider"></div>
+              <a href="../index.html" class="dropdown-signout"
+                ><i class="fas fa-arrow-right-from-bracket"></i
+                ><span>Sign out</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-content">
+      <div class="page-heading">
+        <div class="page-heading-icon indigo">
+          <i class="fas fa-gauge-high"></i>
+        </div>
+        <div>
+          <h1 class="page-title">Dashboard</h1>
+          <p class="page-sub">Welcome back, Alex 👋</p>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="dash-stats">
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon indigo">
+            <i class="fas fa-bag-shopping"></i>
+          </div>
+          <div>
+            <p class="dash-stat-val">12</p>
+            <p class="dash-stat-label">Total Orders</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon fuchsia">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <div>
+            <p class="dash-stat-val">$340</p>
+            <p class="dash-stat-label">Total Spent</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon emerald"><i class="fas fa-cube"></i></div>
+          <div>
+            <p class="dash-stat-val">8</p>
+            <p class="dash-stat-label">Assets Owned</p>
+          </div>
+        </div>
+        <div class="dash-stat-card">
+          <div class="dash-stat-icon yellow"><i class="fas fa-star"></i></div>
+          <div>
+            <p class="dash-stat-val">4.9</p>
+            <p class="dash-stat-label">Avg Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent orders -->
+      <div id="orders" class="glass-panel rounded-[2rem] p-8 mt-8">
+        <div class="section-header" style="margin-bottom: 1.5rem">
+          <h2 class="section-title">Recent Orders</h2>
+          <a href="#" class="section-link"
+            >View all <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="orders-table-wrap">
+          <table class="orders-table">
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Product</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="order-id">#NX-0041</td>
+                <td>Masterpiece Pro Bundle</td>
+                <td>May 3, 2026</td>
+                <td>$49.00</td>
+                <td><span class="order-badge delivered">Delivered</span></td>
+              </tr>
+              <tr>
+                <td class="order-id">#NX-0040</td>
+                <td>UI Component Kit</td>
+                <td>Apr 28, 2026</td>
+                <td>$29.00</td>
+                <td><span class="order-badge delivered">Delivered</span></td>
+              </tr>
+              <tr>
+                <td class="order-id">#NX-0039</td>
+                <td>Motion FX Pack</td>
+                <td>Apr 20, 2026</td>
+                <td>$19.00</td>
+                <td><span class="order-badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td class="order-id">#NX-0038</td>
+                <td>Icon Library Pro</td>
+                <td>Apr 10, 2026</td>
+                <td>$15.00</td>
+                <td><span class="order-badge delivered">Delivered</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const profileBtn = document.getElementById("profileBtn");
+      const profileDropdown = document.getElementById("profileDropdown");
+      const profileChevron = document.getElementById("profileChevron");
+      profileBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = profileDropdown.classList.toggle("open");
+        profileBtn.setAttribute("aria-expanded", open);
+        profileChevron.style.transform = open ? "rotate(180deg)" : "";
+      });
+      document.addEventListener("click", () => {
+        profileDropdown.classList.remove("open");
+        profileBtn.setAttribute("aria-expanded", "false");
+        profileChevron.style.transform = "";
+      });
+      profileDropdown.addEventListener("click", (e) => e.stopPropagation());
+    </script>
+  </body>
+</html>

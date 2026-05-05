@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Admin — Marketing</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-layout custom-scrollbar">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-logo">
+        <div class="admin-logo-icon"><i class="fas fa-terminal"></i></div>
+        <span class="admin-logo-text"
+          >Nexus<span class="admin-logo-accent">Admin</span></span
+        >
+      </div>
+      <nav class="admin-nav">
+        <p class="admin-nav-label">Main</p>
+        <a href="./dashboard.html" class="admin-nav-item"
+          ><i class="fas fa-gauge-high"></i><span>Dashboard</span></a
+        >
+        <a href="./index.html" class="admin-nav-item"
+          ><i class="fas fa-plus-circle"></i><span>Add Product</span></a
+        >
+        <a href="./inventory.html" class="admin-nav-item"
+          ><i class="fas fa-boxes-stacked"></i><span>Inventory</span></a
+        >
+        <a href="./orders.html" class="admin-nav-item"
+          ><i class="fas fa-receipt"></i><span>Orders</span
+          ><span class="admin-nav-badge">4</span></a
+        >
+        <p class="admin-nav-label">Growth</p>
+        <a href="./marketting.html" class="admin-nav-item active"
+          ><i class="fas fa-bullhorn"></i><span>Marketing</span></a
+        >
+        <p class="admin-nav-label">Account</p>
+        <a href="./profile.html" class="admin-nav-item"
+          ><i class="fas fa-user-shield"></i><span>Profile</span></a
+        >
+        <a href="../index.html" class="admin-nav-item admin-nav-item--danger"
+          ><i class="fas fa-arrow-right-from-bracket"></i
+          ><span>Sign Out</span></a
+        >
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-avatar"><i class="fas fa-user"></i></div>
+        <div class="admin-sidebar-user">
+          <p class="admin-sidebar-name">Admin User</p>
+          <p class="admin-sidebar-role">Super Admin</p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="admin-menu-btn" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="admin-page-title">Marketing</h1>
+            <p class="admin-page-sub">Campaigns, promos &amp; growth tools</p>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <button class="admin-topbar-btn">
+            <i class="fas fa-bell"></i><span class="admin-topbar-dot"></span>
+          </button>
+          <a href="./profile.html" class="admin-topbar-avatar"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <!-- Stat row -->
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon indigo">
+              <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">3,240</p>
+              <p class="admin-stat-label">Emails Sent</p>
+              <p class="admin-stat-trend up">
+                <i class="fas fa-arrow-trend-up"></i> +12% this week
+              </p>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon fuchsia">
+              <i class="fas fa-percent"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">24.6%</p>
+              <p class="admin-stat-label">Open Rate</p>
+              <p class="admin-stat-trend up">
+                <i class="fas fa-arrow-trend-up"></i> +3% vs last
+              </p>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon emerald">
+              <i class="fas fa-tag"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">8</p>
+              <p class="admin-stat-label">Active Promos</p>
+              <p class="admin-stat-trend up">
+                <i class="fas fa-arrow-trend-up"></i> 2 new this week
+              </p>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="admin-stat-icon yellow">
+              <i class="fas fa-arrow-pointer"></i>
+            </div>
+            <div class="admin-stat-body">
+              <p class="admin-stat-val">5.8%</p>
+              <p class="admin-stat-label">Click-Through</p>
+              <p class="admin-stat-trend down">
+                <i class="fas fa-arrow-trend-down"></i> −0.4% vs last
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-two-col">
+          <!-- Active campaigns -->
+          <div class="glass-panel rounded-[2rem] p-6">
+            <div class="admin-section-header">
+              <h2 class="admin-section-title">Active Campaigns</h2>
+              <button class="admin-add-btn">
+                <i class="fas fa-plus"></i> New
+              </button>
+            </div>
+            <div class="mkt-campaigns">
+              <div class="mkt-campaign">
+                <div class="mkt-campaign-icon indigo">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="mkt-campaign-info">
+                  <p class="mkt-campaign-name">Spring Sale Blast</p>
+                  <p class="mkt-campaign-meta">Email · 1,200 recipients</p>
+                  <div class="mkt-progress-wrap">
+                    <div class="mkt-progress" style="width: 72%"></div>
+                  </div>
+                </div>
+                <span class="order-badge delivered">Live</span>
+              </div>
+              <div class="mkt-campaign">
+                <div class="mkt-campaign-icon fuchsia">
+                  <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="mkt-campaign-info">
+                  <p class="mkt-campaign-name">New Arrivals Push</p>
+                  <p class="mkt-campaign-meta">Push · 840 recipients</p>
+                  <div class="mkt-progress-wrap">
+                    <div class="mkt-progress fuchsia" style="width: 55%"></div>
+                  </div>
+                </div>
+                <span class="order-badge processing">Scheduled</span>
+              </div>
+              <div class="mkt-campaign">
+                <div class="mkt-campaign-icon emerald">
+                  <i class="fas fa-tag"></i>
+                </div>
+                <div class="mkt-campaign-info">
+                  <p class="mkt-campaign-name">Flash Discount 20%</p>
+                  <p class="mkt-campaign-meta">Promo code · All users</p>
+                  <div class="mkt-progress-wrap">
+                    <div class="mkt-progress emerald" style="width: 88%"></div>
+                  </div>
+                </div>
+                <span class="order-badge delivered">Live</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo codes -->
+          <div class="glass-panel rounded-[2rem] p-6">
+            <div class="admin-section-header">
+              <h2 class="admin-section-title">Promo Codes</h2>
+              <button class="admin-add-btn">
+                <i class="fas fa-plus"></i> New
+              </button>
+            </div>
+            <div class="mkt-promos">
+              <div class="mkt-promo">
+                <div>
+                  <p class="mkt-promo-code">SPRING20</p>
+                  <p class="mkt-promo-meta">20% off · Expires May 31</p>
+                </div>
+                <div class="mkt-promo-right">
+                  <span class="mkt-promo-uses">142 uses</span>
+                  <span class="order-badge delivered">Active</span>
+                </div>
+              </div>
+              <div class="mkt-promo">
+                <div>
+                  <p class="mkt-promo-code">WELCOME10</p>
+                  <p class="mkt-promo-meta">10% off · New users only</p>
+                </div>
+                <div class="mkt-promo-right">
+                  <span class="mkt-promo-uses">89 uses</span>
+                  <span class="order-badge delivered">Active</span>
+                </div>
+              </div>
+              <div class="mkt-promo">
+                <div>
+                  <p class="mkt-promo-code">FLASH50</p>
+                  <p class="mkt-promo-meta">$50 off · Min $150 spend</p>
+                </div>
+                <div class="mkt-promo-right">
+                  <span class="mkt-promo-uses">23 uses</span>
+                  <span class="order-badge pending">Paused</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("sidebarToggle").addEventListener("click", () => {
+        document.getElementById("adminSidebar").classList.toggle("collapsed");
+      });
+    </script>
+  </body>
+</html>

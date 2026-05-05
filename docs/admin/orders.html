@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Admin — Orders</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-layout custom-scrollbar">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-logo">
+        <div class="admin-logo-icon"><i class="fas fa-terminal"></i></div>
+        <span class="admin-logo-text"
+          >Nexus<span class="admin-logo-accent">Admin</span></span
+        >
+      </div>
+      <nav class="admin-nav">
+        <p class="admin-nav-label">Main</p>
+        <a href="./dashboard.html" class="admin-nav-item"
+          ><i class="fas fa-gauge-high"></i><span>Dashboard</span></a
+        >
+        <a href="./index.html" class="admin-nav-item"
+          ><i class="fas fa-plus-circle"></i><span>Add Product</span></a
+        >
+        <a href="./inventory.html" class="admin-nav-item"
+          ><i class="fas fa-boxes-stacked"></i><span>Inventory</span></a
+        >
+        <a href="./orders.html" class="admin-nav-item active"
+          ><i class="fas fa-receipt"></i><span>Orders</span
+          ><span class="admin-nav-badge">4</span></a
+        >
+        <p class="admin-nav-label">Growth</p>
+        <a href="./marketting.html" class="admin-nav-item"
+          ><i class="fas fa-bullhorn"></i><span>Marketing</span></a
+        >
+        <p class="admin-nav-label">Account</p>
+        <a href="./profile.html" class="admin-nav-item"
+          ><i class="fas fa-user-shield"></i><span>Profile</span></a
+        >
+        <a href="../index.html" class="admin-nav-item admin-nav-item--danger"
+          ><i class="fas fa-arrow-right-from-bracket"></i
+          ><span>Sign Out</span></a
+        >
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-avatar"><i class="fas fa-user"></i></div>
+        <div class="admin-sidebar-user">
+          <p class="admin-sidebar-name">Admin User</p>
+          <p class="admin-sidebar-role">Super Admin</p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="admin-menu-btn" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="admin-page-title">Orders</h1>
+            <p class="admin-page-sub">Track and manage all customer orders</p>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <button class="admin-topbar-btn">
+            <i class="fas fa-bell"></i><span class="admin-topbar-dot"></span>
+          </button>
+          <a href="./profile.html" class="admin-topbar-avatar"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <!-- Filter bar -->
+        <div class="admin-filter-bar glass-panel rounded-[2rem]">
+          <div class="admin-filter-search">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              placeholder="Search orders…"
+              class="admin-filter-input"
+            />
+          </div>
+          <div class="admin-filter-chips">
+            <button class="admin-chip active">All</button>
+            <button class="admin-chip">Pending</button>
+            <button class="admin-chip">Processing</button>
+            <button class="admin-chip">Delivered</button>
+            <button class="admin-chip">Refunded</button>
+          </div>
+          <button class="admin-export-btn">
+            <i class="fas fa-download"></i> Export
+          </button>
+        </div>
+
+        <!-- Orders table -->
+        <div class="glass-panel rounded-[2rem] p-6">
+          <table class="admin-table admin-table--full">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="admin-table-id">#NX-0041</td>
+                <td>
+                  <div class="admin-customer-cell">
+                    <div class="admin-customer-avatar">AJ</div>
+                    Alex Johnson
+                  </div>
+                </td>
+                <td>Masterpiece Pro Bundle</td>
+                <td>May 3, 2026</td>
+                <td class="admin-table-amount">$49.00</td>
+                <td><span class="order-badge delivered">Delivered</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-action-btn view">
+                      <i class="fas fa-eye"></i></button
+                    ><button class="admin-action-btn edit">
+                      <i class="fas fa-pen"></i></button
+                    ><button class="admin-action-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="admin-table-id">#NX-0040</td>
+                <td>
+                  <div class="admin-customer-cell">
+                    <div class="admin-customer-avatar fuchsia">MG</div>
+                    Maria Garcia
+                  </div>
+                </td>
+                <td>UI Component Kit</td>
+                <td>Apr 28, 2026</td>
+                <td class="admin-table-amount">$29.00</td>
+                <td><span class="order-badge pending">Pending</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-action-btn view">
+                      <i class="fas fa-eye"></i></button
+                    ><button class="admin-action-btn edit">
+                      <i class="fas fa-pen"></i></button
+                    ><button class="admin-action-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="admin-table-id">#NX-0039</td>
+                <td>
+                  <div class="admin-customer-cell">
+                    <div class="admin-customer-avatar emerald">JL</div>
+                    James Lee
+                  </div>
+                </td>
+                <td>Motion FX Pack</td>
+                <td>Apr 20, 2026</td>
+                <td class="admin-table-amount">$19.00</td>
+                <td><span class="order-badge processing">Processing</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-action-btn view">
+                      <i class="fas fa-eye"></i></button
+                    ><button class="admin-action-btn edit">
+                      <i class="fas fa-pen"></i></button
+                    ><button class="admin-action-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="admin-table-id">#NX-0038</td>
+                <td>
+                  <div class="admin-customer-cell">
+                    <div class="admin-customer-avatar yellow">SK</div>
+                    Sara Kim
+                  </div>
+                </td>
+                <td>Icon Library Pro</td>
+                <td>Apr 10, 2026</td>
+                <td class="admin-table-amount">$99.00</td>
+                <td><span class="order-badge delivered">Delivered</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-action-btn view">
+                      <i class="fas fa-eye"></i></button
+                    ><button class="admin-action-btn edit">
+                      <i class="fas fa-pen"></i></button
+                    ><button class="admin-action-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="admin-table-id">#NX-0037</td>
+                <td>
+                  <div class="admin-customer-cell">
+                    <div class="admin-customer-avatar">RP</div>
+                    Ryan Park
+                  </div>
+                </td>
+                <td>Masterpiece Pro Bundle</td>
+                <td>Apr 5, 2026</td>
+                <td class="admin-table-amount">$49.00</td>
+                <td><span class="order-badge refunded">Refunded</span></td>
+                <td>
+                  <div class="admin-table-actions">
+                    <button class="admin-action-btn view">
+                      <i class="fas fa-eye"></i></button
+                    ><button class="admin-action-btn edit">
+                      <i class="fas fa-pen"></i></button
+                    ><button class="admin-action-btn delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("sidebarToggle").addEventListener("click", () => {
+        document.getElementById("adminSidebar").classList.toggle("collapsed");
+      });
+      document.querySelectorAll(".admin-chip").forEach((chip) => {
+        chip.addEventListener("click", function () {
+          document
+            .querySelectorAll(".admin-chip")
+            .forEach((c) => c.classList.remove("active"));
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

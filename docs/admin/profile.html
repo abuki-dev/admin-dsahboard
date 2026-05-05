@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Admin — Profile</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-layout custom-scrollbar">
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="admin-sidebar-logo">
+        <div class="admin-logo-icon"><i class="fas fa-terminal"></i></div>
+        <span class="admin-logo-text"
+          >Nexus<span class="admin-logo-accent">Admin</span></span
+        >
+      </div>
+      <nav class="admin-nav">
+        <p class="admin-nav-label">Main</p>
+        <a href="./dashboard.html" class="admin-nav-item"
+          ><i class="fas fa-gauge-high"></i><span>Dashboard</span></a
+        >
+        <a href="./index.html" class="admin-nav-item"
+          ><i class="fas fa-plus-circle"></i><span>Add Product</span></a
+        >
+        <a href="./inventory.html" class="admin-nav-item"
+          ><i class="fas fa-boxes-stacked"></i><span>Inventory</span></a
+        >
+        <a href="./orders.html" class="admin-nav-item"
+          ><i class="fas fa-receipt"></i><span>Orders</span
+          ><span class="admin-nav-badge">4</span></a
+        >
+        <p class="admin-nav-label">Growth</p>
+        <a href="./marketting.html" class="admin-nav-item"
+          ><i class="fas fa-bullhorn"></i><span>Marketing</span></a
+        >
+        <p class="admin-nav-label">Account</p>
+        <a href="./profile.html" class="admin-nav-item active"
+          ><i class="fas fa-user-shield"></i><span>Profile</span></a
+        >
+        <a href="../index.html" class="admin-nav-item admin-nav-item--danger"
+          ><i class="fas fa-arrow-right-from-bracket"></i
+          ><span>Sign Out</span></a
+        >
+      </nav>
+      <div class="admin-sidebar-footer">
+        <div class="admin-sidebar-avatar"><i class="fas fa-user"></i></div>
+        <div class="admin-sidebar-user">
+          <p class="admin-sidebar-name">Admin User</p>
+          <p class="admin-sidebar-role">Super Admin</p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="admin-menu-btn" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div>
+            <h1 class="admin-page-title">Profile</h1>
+            <p class="admin-page-sub">Manage your admin account</p>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <button class="admin-topbar-btn">
+            <i class="fas fa-bell"></i><span class="admin-topbar-dot"></span>
+          </button>
+          <a
+            href="./profile.html"
+            class="admin-topbar-avatar admin-topbar-avatar--active"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <div class="profile-layout">
+          <!-- Avatar card -->
+          <div class="profile-avatar-card glass-panel rounded-[2rem] p-8">
+            <div
+              class="profile-avatar-xl"
+              style="background: linear-gradient(135deg, #6366f1, #a855f7)"
+            >
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <p class="profile-avatar-name">Admin User</p>
+            <p class="profile-avatar-email">admin@nexus.io</p>
+            <div class="admin-role-badge">
+              <i class="fas fa-shield-halved"></i> Super Admin
+            </div>
+            <div class="profile-stats" style="margin-top: 1.5rem">
+              <div class="profile-stat">
+                <span class="profile-stat-val">64</span>
+                <span class="profile-stat-label">Products</span>
+              </div>
+              <div class="profile-stat-divider"></div>
+              <div class="profile-stat">
+                <span class="profile-stat-val">348</span>
+                <span class="profile-stat-label">Orders</span>
+              </div>
+              <div class="profile-stat-divider"></div>
+              <div class="profile-stat">
+                <span class="profile-stat-val">$12k</span>
+                <span class="profile-stat-label">Revenue</span>
+              </div>
+            </div>
+            <button
+              class="btn-primary"
+              style="width: 100%; justify-content: center; margin-top: 1.5rem"
+            >
+              <i class="fas fa-camera"></i> Change Avatar
+            </button>
+          </div>
+
+          <!-- Settings -->
+          <div class="profile-form-col">
+            <div class="glass-panel rounded-[2rem] p-8 mb-6">
+              <h2 class="form-section-title">
+                <span class="form-section-bar"></span>Account Info
+              </h2>
+              <div class="profile-form-grid">
+                <div class="form-field">
+                  <label class="form-label"
+                    ><i class="fas fa-user text-indigo-400"></i> First
+                    Name</label
+                  >
+                  <input type="text" class="form-input" value="Admin" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label"
+                    ><i class="fas fa-user text-indigo-400"></i> Last
+                    Name</label
+                  >
+                  <input type="text" class="form-input" value="User" />
+                </div>
+                <div class="form-field form-field--full">
+                  <label class="form-label"
+                    ><i class="fas fa-envelope text-fuchsia-400"></i>
+                    Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-input"
+                    value="admin@nexus.io"
+                  />
+                </div>
+                <div class="form-field form-field--full">
+                  <label class="form-label"
+                    ><i class="fas fa-id-badge text-emerald-400"></i>
+                    Role</label
+                  >
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="Super Admin"
+                    readonly
+                    style="opacity: 0.6; cursor: not-allowed"
+                  />
+                </div>
+              </div>
+              <button class="btn-primary" style="margin-top: 1.5rem">
+                <i class="fas fa-floppy-disk"></i> Save Changes
+              </button>
+            </div>
+
+            <div class="glass-panel rounded-4xl p-8 mb-6">
+              <h2 class="form-section-title">
+                <span
+                  class="form-section-bar"
+                  style="
+                    background: linear-gradient(to bottom, #10b981, #059669);
+                  "
+                ></span
+                >Security
+              </h2>
+              <div class="profile-form-grid">
+                <div class="form-field form-field--full">
+                  <label class="form-label"
+                    ><i class="fas fa-lock text-slate-400"></i> Current
+                    Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-input"
+                    placeholder="••••••••"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label"
+                    ><i class="fas fa-key text-emerald-400"></i> New
+                    Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-input"
+                    placeholder="••••••••"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label"
+                    ><i class="fas fa-key text-emerald-400"></i> Confirm</label
+                  >
+                  <input
+                    type="password"
+                    class="form-input"
+                    placeholder="••••••••"
+                  />
+                </div>
+              </div>
+              <button
+                class="btn-primary"
+                style="
+                  margin-top: 1.5rem;
+                  background: linear-gradient(135deg, #10b981, #059669);
+                "
+              >
+                <i class="fas fa-shield-halved"></i> Update Password
+              </button>
+            </div>
+
+            <!-- Danger zone -->
+            <div
+              class="glass-panel rounded-[2rem] p-8"
+              style="border-color: rgba(239, 68, 68, 0.2)"
+            >
+              <h2 class="form-section-title">
+                <span
+                  class="form-section-bar"
+                  style="
+                    background: linear-gradient(to bottom, #ef4444, #dc2626);
+                  "
+                ></span
+                >Danger Zone
+              </h2>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: #64748b;
+                  margin-bottom: 1.25rem;
+                "
+              >
+                These actions are irreversible. Proceed with caution.
+              </p>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                <button class="admin-danger-btn">
+                  <i class="fas fa-user-slash"></i> Deactivate Account
+                </button>
+                <button class="admin-danger-btn admin-danger-btn--hard">
+                  <i class="fas fa-trash-can"></i> Delete Account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("sidebarToggle").addEventListener("click", () => {
+        document.getElementById("adminSidebar").classList.toggle("collapsed");
+      });
+    </script>
+  </body>
+</html>
