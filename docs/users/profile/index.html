@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus — Profile</title>
+    <link rel="icon" type="image/png" href="../assets/dashboard.png" />
+    <link rel="stylesheet" href="../../src/output.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen custom-scrollbar">
+    <!-- NAVBAR -->
+    <nav class="nav-bar">
+      <div class="nav-inner">
+        <a href="../" class="nav-logo">
+          <div class="nav-logo-icon"><i class="fas fa-bolt"></i></div>
+          <span class="nav-logo-text"
+            >Nexus<span class="nav-logo-accent">Store</span></span
+          >
+        </a>
+        <div class="nav-search-wrap">
+          <i class="fas fa-search nav-search-icon"></i>
+          <input
+            type="text"
+            class="nav-search-input"
+            placeholder="Search products…"
+            autocomplete="off"
+          />
+          <kbd class="nav-search-kbd">⌘K</kbd>
+        </div>
+        <div class="nav-actions">
+          <a href="../cart/" class="nav-icon-btn" aria-label="Cart">
+            <i class="fas fa-bag-shopping"></i>
+            <span class="nav-badge">3</span>
+          </a>
+          <div class="nav-dropdown-wrap" id="profileDropdownWrap">
+            <button
+              class="nav-avatar-btn"
+              id="profileBtn"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <div class="nav-avatar"><i class="fas fa-user"></i></div>
+              <span class="nav-avatar-name">Alex</span>
+              <i
+                class="fas fa-chevron-down nav-chevron"
+                id="profileChevron"
+              ></i>
+            </button>
+            <div class="nav-dropdown" id="profileDropdown" role="menu">
+              <div class="dropdown-header">
+                <div class="dropdown-avatar-lg">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <p class="dropdown-name">Alex Johnson</p>
+                  <p class="dropdown-email">alex@nexus.io</p>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <ul class="dropdown-menu" role="none">
+                <li>
+                  <a href="../Dashboard/" class="dropdown-item"
+                    ><span class="dropdown-item-icon indigo"
+                      ><i class="fas fa-gauge-high"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Dashboard</span
+                      ><span class="dropdown-item-sub">Your overview</span>
+                    </div></a
+                  >
+                </li>
+                <li>
+                  <a href="../cart/" class="dropdown-item"
+                    ><span class="dropdown-item-icon fuchsia"
+                      ><i class="fas fa-bag-shopping"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Cart</span
+                      ><span class="dropdown-item-sub">3 items waiting</span>
+                    </div>
+                    <span class="dropdown-item-badge">3</span></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="../profile/"
+                    class="dropdown-item dropdown-item--active"
+                    ><span class="dropdown-item-icon emerald"
+                      ><i class="fas fa-user-pen"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Profile</span
+                      ><span class="dropdown-item-sub"
+                        >Settings &amp; account</span
+                      >
+                    </div></a
+                  >
+                </li>
+                <li>
+                  <a href="../Dashboard/#orders" class="dropdown-item"
+                    ><span class="dropdown-item-icon slate"
+                      ><i class="fas fa-clock-rotate-left"></i
+                    ></span>
+                    <div>
+                      <span class="dropdown-item-label">Order History</span
+                      ><span class="dropdown-item-sub">Past purchases</span>
+                    </div></a
+                  >
+                </li>
+              </ul>
+              <div class="dropdown-divider"></div>
+              <a href="../../" class="dropdown-signout"
+                ><i class="fas fa-arrow-right-from-bracket"></i
+                ><span>Sign out</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page-content">
+      <div class="page-heading">
+        <div class="page-heading-icon emerald">
+          <i class="fas fa-user-pen"></i>
+        </div>
+        <div>
+          <h1 class="page-title">Profile</h1>
+          <p class="page-sub">Manage your account settings</p>
+        </div>
+      </div>
+
+      <div class="profile-layout">
+        <!-- Avatar card -->
+        <div class="profile-avatar-card glass-panel rounded-[2rem] p-8">
+          <div class="profile-avatar-xl">
+            <i class="fas fa-user"></i>
+          </div>
+          <p class="profile-avatar-name">Alex Johnson</p>
+          <p class="profile-avatar-email">alex@nexus.io</p>
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <span class="profile-stat-val">12</span>
+              <span class="profile-stat-label">Orders</span>
+            </div>
+            <div class="profile-stat-divider"></div>
+            <div class="profile-stat">
+              <span class="profile-stat-val">$340</span>
+              <span class="profile-stat-label">Spent</span>
+            </div>
+            <div class="profile-stat-divider"></div>
+            <div class="profile-stat">
+              <span class="profile-stat-val">8</span>
+              <span class="profile-stat-label">Assets</span>
+            </div>
+          </div>
+          <button
+            class="btn-primary"
+            style="width: 100%; justify-content: center; margin-top: 1.5rem"
+          >
+            <i class="fas fa-camera"></i> Change Avatar
+          </button>
+        </div>
+
+        <!-- Settings form -->
+        <div class="profile-form-col">
+          <div class="glass-panel rounded-[2rem] p-8 mb-6">
+            <h2 class="form-section-title">
+              <span class="form-section-bar"></span>Personal Info
+            </h2>
+            <div class="profile-form-grid">
+              <div class="form-field">
+                <label class="form-label"
+                  ><i class="fas fa-user text-indigo-400"></i> First Name</label
+                >
+                <input type="text" class="form-input" value="Alex" />
+              </div>
+              <div class="form-field">
+                <label class="form-label"
+                  ><i class="fas fa-user text-indigo-400"></i> Last Name</label
+                >
+                <input type="text" class="form-input" value="Johnson" />
+              </div>
+              <div class="form-field form-field--full">
+                <label class="form-label"
+                  ><i class="fas fa-envelope text-fuchsia-400"></i> Email</label
+                >
+                <input type="email" class="form-input" value="alex@nexus.io" />
+              </div>
+              <div class="form-field form-field--full">
+                <label class="form-label"
+                  ><i class="fas fa-phone text-emerald-400"></i> Phone</label
+                >
+                <input
+                  type="tel"
+                  class="form-input"
+                  placeholder="+1 (555) 000-0000"
+                />
+              </div>
+            </div>
+            <button class="btn-primary" style="margin-top: 1.5rem">
+              <i class="fas fa-floppy-disk"></i> Save Changes
+            </button>
+          </div>
+
+          <div class="glass-panel rounded-[2rem] p-8">
+            <h2 class="form-section-title">
+              <span
+                class="form-section-bar"
+                style="background: linear-gradient(to bottom, #10b981, #059669)"
+              ></span
+              >Security
+            </h2>
+            <div class="profile-form-grid">
+              <div class="form-field form-field--full">
+                <label class="form-label"
+                  ><i class="fas fa-lock text-slate-400"></i> Current
+                  Password</label
+                >
+                <input
+                  type="password"
+                  class="form-input"
+                  placeholder="••••••••"
+                />
+              </div>
+              <div class="form-field">
+                <label class="form-label"
+                  ><i class="fas fa-key text-emerald-400"></i> New
+                  Password</label
+                >
+                <input
+                  type="password"
+                  class="form-input"
+                  placeholder="••••••••"
+                />
+              </div>
+              <div class="form-field">
+                <label class="form-label"
+                  ><i class="fas fa-key text-emerald-400"></i> Confirm
+                  Password</label
+                >
+                <input
+                  type="password"
+                  class="form-input"
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+            <button
+              class="btn-primary"
+              style="
+                margin-top: 1.5rem;
+                background: linear-gradient(to right, #10b981, #059669);
+              "
+            >
+              <i class="fas fa-shield-halved"></i> Update Password
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const profileBtn = document.getElementById("profileBtn");
+      const profileDropdown = document.getElementById("profileDropdown");
+      const profileChevron = document.getElementById("profileChevron");
+      profileBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = profileDropdown.classList.toggle("open");
+        profileBtn.setAttribute("aria-expanded", open);
+        profileChevron.style.transform = open ? "rotate(180deg)" : "";
+      });
+      document.addEventListener("click", () => {
+        profileDropdown.classList.remove("open");
+        profileBtn.setAttribute("aria-expanded", "false");
+        profileChevron.style.transform = "";
+      });
+      profileDropdown.addEventListener("click", (e) => e.stopPropagation());
+    </script>
+  </body>
+</html>

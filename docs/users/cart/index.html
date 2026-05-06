@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus — Profile</title>
+    <title>Nexus — Cart</title>
     <link rel="icon" type="image/png" href="../assets/dashboard.png" />
-    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="stylesheet" href="../../src/output.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
@@ -16,7 +16,7 @@
     <!-- NAVBAR -->
     <nav class="nav-bar">
       <div class="nav-inner">
-        <a href="./index.html" class="nav-logo">
+        <a href="../" class="nav-logo">
           <div class="nav-logo-icon"><i class="fas fa-bolt"></i></div>
           <span class="nav-logo-text"
             >Nexus<span class="nav-logo-accent">Store</span></span
@@ -33,7 +33,11 @@
           <kbd class="nav-search-kbd">⌘K</kbd>
         </div>
         <div class="nav-actions">
-          <a href="./cart.html" class="nav-icon-btn" aria-label="Cart">
+          <a
+            href="../cart/"
+            class="nav-icon-btn nav-icon-btn--active"
+            aria-label="Cart"
+          >
             <i class="fas fa-bag-shopping"></i>
             <span class="nav-badge">3</span>
           </a>
@@ -64,7 +68,7 @@
               <div class="dropdown-divider"></div>
               <ul class="dropdown-menu" role="none">
                 <li>
-                  <a href="./dasboard.html" class="dropdown-item"
+                  <a href="../Dashboard/" class="dropdown-item"
                     ><span class="dropdown-item-icon indigo"
                       ><i class="fas fa-gauge-high"></i
                     ></span>
@@ -75,7 +79,7 @@
                   >
                 </li>
                 <li>
-                  <a href="./cart.html" class="dropdown-item"
+                  <a href="../cart/" class="dropdown-item dropdown-item--active"
                     ><span class="dropdown-item-icon fuchsia"
                       ><i class="fas fa-bag-shopping"></i
                     ></span>
@@ -87,9 +91,7 @@
                   >
                 </li>
                 <li>
-                  <a
-                    href="./profile.html"
-                    class="dropdown-item dropdown-item--active"
+                  <a href="../profile/" class="dropdown-item"
                     ><span class="dropdown-item-icon emerald"
                       ><i class="fas fa-user-pen"></i
                     ></span>
@@ -102,7 +104,7 @@
                   >
                 </li>
                 <li>
-                  <a href="./dasboard.html#orders" class="dropdown-item"
+                  <a href="../Dashboard/#orders" class="dropdown-item"
                     ><span class="dropdown-item-icon slate"
                       ><i class="fas fa-clock-rotate-left"></i
                     ></span>
@@ -114,7 +116,7 @@
                 </li>
               </ul>
               <div class="dropdown-divider"></div>
-              <a href="../index.html" class="dropdown-signout"
+              <a href="../../" class="dropdown-signout"
                 ><i class="fas fa-arrow-right-from-bracket"></i
                 ><span>Sign out</span></a
               >
@@ -125,141 +127,145 @@
     </nav>
 
     <main class="page-content">
+      <!-- Page heading -->
       <div class="page-heading">
-        <div class="page-heading-icon emerald">
-          <i class="fas fa-user-pen"></i>
+        <div class="page-heading-icon fuchsia">
+          <i class="fas fa-bag-shopping"></i>
         </div>
         <div>
-          <h1 class="page-title">Profile</h1>
-          <p class="page-sub">Manage your account settings</p>
+          <h1 class="page-title">Your Cart</h1>
+          <p class="page-sub">Review your items before checkout</p>
         </div>
       </div>
 
-      <div class="profile-layout">
-        <!-- Avatar card -->
-        <div class="profile-avatar-card glass-panel rounded-[2rem] p-8">
-          <div class="profile-avatar-xl">
-            <i class="fas fa-user"></i>
+      <div class="cart-layout">
+        <!-- Cart items -->
+        <div class="cart-items-col">
+          <div class="glass-panel rounded-[2rem] overflow-hidden">
+            <!-- Item -->
+            <div class="cart-item">
+              <div class="cart-item-img-wrap">
+                <div class="cart-item-img-placeholder">
+                  <i class="fas fa-cube"></i>
+                </div>
+              </div>
+              <div class="cart-item-info">
+                <p class="cart-item-name">Masterpiece Pro Bundle</p>
+                <p class="cart-item-meta">Digital Asset · Instant delivery</p>
+              </div>
+              <div class="cart-item-right">
+                <div class="cart-qty">
+                  <button class="cart-qty-btn">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="cart-qty-val">1</span>
+                  <button class="cart-qty-btn">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <p class="cart-item-price">$49.00</p>
+                <button class="cart-remove-btn">
+                  <i class="fas fa-trash-can"></i>
+                </button>
+              </div>
+            </div>
+            <div class="cart-divider"></div>
+            <!-- Item 2 -->
+            <div class="cart-item">
+              <div class="cart-item-img-wrap">
+                <div class="cart-item-img-placeholder">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+              </div>
+              <div class="cart-item-info">
+                <p class="cart-item-name">UI Component Kit</p>
+                <p class="cart-item-meta">Design Asset · Instant delivery</p>
+              </div>
+              <div class="cart-item-right">
+                <div class="cart-qty">
+                  <button class="cart-qty-btn">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="cart-qty-val">2</span>
+                  <button class="cart-qty-btn">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <p class="cart-item-price">$29.00</p>
+                <button class="cart-remove-btn">
+                  <i class="fas fa-trash-can"></i>
+                </button>
+              </div>
+            </div>
+            <div class="cart-divider"></div>
+            <!-- Item 3 -->
+            <div class="cart-item">
+              <div class="cart-item-img-wrap">
+                <div class="cart-item-img-placeholder">
+                  <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+              </div>
+              <div class="cart-item-info">
+                <p class="cart-item-name">Motion FX Pack</p>
+                <p class="cart-item-meta">Animation Asset · Instant delivery</p>
+              </div>
+              <div class="cart-item-right">
+                <div class="cart-qty">
+                  <button class="cart-qty-btn">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <span class="cart-qty-val">1</span>
+                  <button class="cart-qty-btn">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <p class="cart-item-price">$19.00</p>
+                <button class="cart-remove-btn">
+                  <i class="fas fa-trash-can"></i>
+                </button>
+              </div>
+            </div>
           </div>
-          <p class="profile-avatar-name">Alex Johnson</p>
-          <p class="profile-avatar-email">alex@nexus.io</p>
-          <div class="profile-stats">
-            <div class="profile-stat">
-              <span class="profile-stat-val">12</span>
-              <span class="profile-stat-label">Orders</span>
-            </div>
-            <div class="profile-stat-divider"></div>
-            <div class="profile-stat">
-              <span class="profile-stat-val">$340</span>
-              <span class="profile-stat-label">Spent</span>
-            </div>
-            <div class="profile-stat-divider"></div>
-            <div class="profile-stat">
-              <span class="profile-stat-val">8</span>
-              <span class="profile-stat-label">Assets</span>
-            </div>
-          </div>
-          <button
-            class="btn-primary"
-            style="width: 100%; justify-content: center; margin-top: 1.5rem"
-          >
-            <i class="fas fa-camera"></i> Change Avatar
-          </button>
         </div>
 
-        <!-- Settings form -->
-        <div class="profile-form-col">
-          <div class="glass-panel rounded-[2rem] p-8 mb-6">
-            <h2 class="form-section-title">
-              <span class="form-section-bar"></span>Personal Info
-            </h2>
-            <div class="profile-form-grid">
-              <div class="form-field">
-                <label class="form-label"
-                  ><i class="fas fa-user text-indigo-400"></i> First Name</label
-                >
-                <input type="text" class="form-input" value="Alex" />
-              </div>
-              <div class="form-field">
-                <label class="form-label"
-                  ><i class="fas fa-user text-indigo-400"></i> Last Name</label
-                >
-                <input type="text" class="form-input" value="Johnson" />
-              </div>
-              <div class="form-field form-field--full">
-                <label class="form-label"
-                  ><i class="fas fa-envelope text-fuchsia-400"></i> Email</label
-                >
-                <input type="email" class="form-input" value="alex@nexus.io" />
-              </div>
-              <div class="form-field form-field--full">
-                <label class="form-label"
-                  ><i class="fas fa-phone text-emerald-400"></i> Phone</label
-                >
-                <input
-                  type="tel"
-                  class="form-input"
-                  placeholder="+1 (555) 000-0000"
-                />
-              </div>
-            </div>
-            <button class="btn-primary" style="margin-top: 1.5rem">
-              <i class="fas fa-floppy-disk"></i> Save Changes
-            </button>
-          </div>
-
+        <!-- Order summary -->
+        <div class="cart-summary-col">
           <div class="glass-panel rounded-[2rem] p-8">
-            <h2 class="form-section-title">
-              <span
-                class="form-section-bar"
-                style="background: linear-gradient(to bottom, #10b981, #059669)"
-              ></span
-              >Security
-            </h2>
-            <div class="profile-form-grid">
-              <div class="form-field form-field--full">
-                <label class="form-label"
-                  ><i class="fas fa-lock text-slate-400"></i> Current
-                  Password</label
-                >
-                <input
-                  type="password"
-                  class="form-input"
-                  placeholder="••••••••"
-                />
+            <h2 class="summary-title">Order Summary</h2>
+            <div class="summary-rows">
+              <div class="summary-row">
+                <span>Subtotal</span><span>$97.00</span>
               </div>
-              <div class="form-field">
-                <label class="form-label"
-                  ><i class="fas fa-key text-emerald-400"></i> New
-                  Password</label
-                >
-                <input
-                  type="password"
-                  class="form-input"
-                  placeholder="••••••••"
-                />
+              <div class="summary-row">
+                <span>Discount</span
+                ><span class="summary-discount">−$10.00</span>
               </div>
-              <div class="form-field">
-                <label class="form-label"
-                  ><i class="fas fa-key text-emerald-400"></i> Confirm
-                  Password</label
-                >
-                <input
-                  type="password"
-                  class="form-input"
-                  placeholder="••••••••"
-                />
+              <div class="summary-row">
+                <span>Tax (8%)</span><span>$7.00</span>
               </div>
             </div>
-            <button
-              class="btn-primary"
-              style="
-                margin-top: 1.5rem;
-                background: linear-gradient(to right, #10b981, #059669);
-              "
-            >
-              <i class="fas fa-shield-halved"></i> Update Password
-            </button>
+            <div class="summary-divider"></div>
+            <div class="summary-total">
+              <span>Total</span><span>$94.00</span>
+            </div>
+
+            <!-- Promo code -->
+            <div class="promo-wrap">
+              <input
+                type="text"
+                class="promo-input"
+                placeholder="Promo code…"
+              />
+              <button class="promo-btn">Apply</button>
+            </div>
+
+            <a href="#" class="checkout-btn">
+              <i class="fas fa-lock"></i>
+              Secure Checkout
+            </a>
+            <a href="../" class="continue-btn">
+              <i class="fas fa-arrow-left"></i> Continue Shopping
+            </a>
           </div>
         </div>
       </div>
