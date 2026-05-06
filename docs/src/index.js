@@ -7,7 +7,7 @@ if (document.getElementById("login-form")) {
     e.preventDefault();
     const Accounttype = Checkaccount();
     if (Accounttype === "admin") window.location.href = "./admin/";
-    else if (Accounttype === "user") window.location.href = "./users";
+    else if (Accounttype === "user") window.location.href = "./users/";
     else alert("please choosse correc account type");
   });
   function Checkaccount() {
