@@ -43,7 +43,7 @@
         <a href="./profile.html" class="admin-nav-item"
           ><i class="fas fa-user-shield"></i><span>Profile</span></a
         >
-        <a href="../index.html" class="admin-nav-item admin-nav-item--danger"
+        <a href="../" class="admin-nav-item admin-nav-item--danger"
           ><i class="fas fa-arrow-right-from-bracket"></i
           ><span>Sign Out</span></a
         >
@@ -78,9 +78,11 @@
           <button class="admin-topbar-btn">
             <i class="fas fa-bell"></i><span class="admin-topbar-dot"></span>
           </button>
-          <a href="./profile.html" class="admin-topbar-avatar"
-            ><i class="fas fa-user"></i
-          ></a>
+
+          <!-- Mobile Menu Button (3 dots) -->
+          <button class="admin-topbar-btn" id="mobileMenuBtn">
+            <i class="fas fa-ellipsis-vertical"></i>
+          </button>
         </div>
       </header>
 
@@ -244,8 +246,42 @@
 
     <script src="../src/index.js"></script>
     <script>
-      document.getElementById("sidebarToggle").addEventListener("click", () => {
-        document.getElementById("adminSidebar").classList.toggle("collapsed");
+      const sidebar = document.getElementById("adminSidebar");
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+
+      // Create overlay for mobile
+      const overlay = document.createElement("div");
+      overlay.className = "admin-sidebar-overlay";
+      document.body.appendChild(overlay);
+
+      // Function to toggle sidebar
+      function toggleSidebar() {
+        const isCollapsed = sidebar.classList.toggle("collapsed");
+        toggleBtn.classList.toggle("active", !isCollapsed);
+        overlay.classList.toggle("active", !isCollapsed);
+      }
+
+      // Toggle sidebar with hamburger button
+      toggleBtn.addEventListener("click", toggleSidebar);
+
+      // Toggle sidebar with 3-dot menu button
+      mobileMenuBtn.addEventListener("click", toggleSidebar);
+
+      // Close sidebar when clicking overlay
+      overlay.addEventListener("click", () => {
+        sidebar.classList.add("collapsed");
+        toggleBtn.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Close sidebar on window resize to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 1024) {
+          sidebar.classList.remove("collapsed");
+          toggleBtn.classList.remove("active");
+          overlay.classList.remove("active");
+        }
       });
     </script>
   </body>
