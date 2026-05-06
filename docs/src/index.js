@@ -6,7 +6,7 @@ if (document.getElementById("login-form")) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const Accounttype = Checkaccount();
-    if (Accounttype === "admin") window.location.href = "./admin";
+    if (Accounttype === "admin") window.location.href = "./admin/";
     else if (Accounttype === "user") window.location.href = "./users";
     else alert("please choosse correc account type");
   });
